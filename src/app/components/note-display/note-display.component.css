@@ -1,0 +1,13 @@
+.editor {
+  letter-spacing: .00625em;
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 2rem;
+  height: 100vh;
+  padding: 25px;
+  outline: none;
+}
+
+.qr {
+  height: 720px;
+}

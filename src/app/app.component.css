@@ -1,0 +1,51 @@
+.clearfix {
+  overflow: auto;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.header {
+  height: 64px;
+  background: #2196F3;
+}
+
+
+.sidebar {
+  float: left;
+  width: 310px;
+  box-shadow: 0 0px 0px 0 rgba(0, 0, 0, -6.86),
+    0 0px 3px 0 rgba(0, 0, 0, -7.88),
+    0 5px 4px 1px rgba(0, 0, 0, 0.1);
+  overflow: auto;
+  height: 100vh;
+}
+
+.handle {
+  width: 8px;
+  background: #ddd;
+  cursor: ew-resize;
+  flex: 1;
+}
+
+.content {
+  flex-grow: 1;
+  overflow: auto;
+}
+
+
+.main {
+  display: flex;
+}
+
+medium-editor div {
+  height: 100vh;
+}

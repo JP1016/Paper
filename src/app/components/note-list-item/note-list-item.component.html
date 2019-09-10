@@ -1,0 +1,10 @@
+<div class="max-w-sm w-full lg:max-w-full lg:flex" *ngFor="let note of formattedNotes" style="cursor:pointer" (click)="changeNote(note.id)">
+  <div class="p-3 flex flex-col justify-between leading-normal">
+    <div class="mb-0">
+      <div class="text-sm">{{note.firstLine}}</div>
+      <p class="text-xs">{{note.nextLines}}</p>
+    </div>
+  </div>
+  <hr />
+
+</div>

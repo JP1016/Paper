@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+* {
+  font-family: 'Quicksand', sans-serif;
+}
+
+html,
+body {
+  font-family: 'Quicksand',
+    sans-serif;
+}
+
+.me-editable {
+  height: 100vh;
+  padding: 20px;
+  outline: 0 solid transparent;
+}
+
+.custom-class-h1 {
+  font-size: 200px;
+}
+
+.custom-class-h2 {
+  font-size: 15px;
+}
+
+
+h2 {
+  font-size: 100px;
+}

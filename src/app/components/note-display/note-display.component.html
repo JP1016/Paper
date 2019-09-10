@@ -1,0 +1,6 @@
+<div class="d-flex">
+  <button (click)="openAsQR()">Show QR</button>
+  <button (click)="deleteNote()">Delete</button>
+  <div class="flex-grow-1" contenteditable="true" class="editor" [formControl]="noteCtrl" #notePad>
+  </div>
+</div>
