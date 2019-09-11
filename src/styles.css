@@ -1,5 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+body[class='light-mode'] {
+  --bg: #fff;
+  --text: #212121;
+  --shadow: rgba(0, 0, 0, 0.05);
+  --sidebar-shadow: rgba(0, 0, 0, 0.1);
+  --border: #3333330f;
+  --button: #edf2f7;
+  --btn-hover: #e2e8f0;
+
+  --note-hover: #f7fafc;
+  --note-main-text: #4a5568;
+  --note-sub-text: #a0aec0;
+  --modal-bg: #3b434f;
+}
+
+body[class='dark-mode'] {
+  --bg: #090b0f;
+  --text: #fff;
+  --shadow: rgba(39, 37, 39, 0.4);
+  --sidebar-shadow: rgba(39, 37, 39, 0.4);
+  --border: #3333337a;
+  --button: #1a202c;
+  --btn-hover: #2d3748;
+
+  --note-hover: #1a202c;
+  --note-main-text: #e2e8f0;
+  --note-sub-text: #718096;
+  --modal-bg: #718096;
+}
 
 * {
   font-family: 'Quicksand', sans-serif;
@@ -7,8 +36,18 @@
 
 html,
 body {
-  font-family: 'Quicksand',
-    sans-serif;
+  font-family: 'Quicksand', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+.fe-icon {
+  width: 15px !important;
+  color: var(--text);
+  height: 16px !important;
+}
+
+.fe-icon:hover {
+  color: #718096;
 }
 
 .me-editable {
@@ -25,7 +64,39 @@ body {
   font-size: 15px;
 }
 
-
 h2 {
   font-size: 100px;
+}
+
+.notelist {
+  border-bottom: 1px solid var(--border);
+}
+
+.notelist .text-sm {
+  color: var(--note-main-text);
+}
+
+.notelist .text-xs {
+  color: var(--note-sub-text);
+}
+
+.notelist:hover {
+  background: var(--note-hover);
+}
+
+.mat-dialog-container {
+  background: var(--modal-bg);
+}
+
+.new-button {
+  padding: 1rem;
+  text-align: center;
+  justify-content: center;
+  background: var(--shadow);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+.new-button span {
+  padding-left: 6px;
 }

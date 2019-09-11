@@ -8,15 +8,17 @@ import { environment } from '../environments/environment';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NoteDisplayComponent } from './components/note-display/note-display.component';
 import { SimplebarComponent } from '../../node_modules/jp-simplebar';
-import { NoteListItemComponent } from './components/note-list-item/note-list-item.component'
-import { MediumEditorModule } from 'angular2-medium-editor'
+import { NoteListItemComponent } from './components/note-list-item/note-list-item.component';
+import { MediumEditorModule } from 'angular2-medium-editor';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { ContenteditableModule } from '@ng-stack/contenteditable';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { QRCodeModule } from 'angularx-qrcode';
 import { QrDisplayComponent } from './components/qr-display/qr-display.component';
-import { MatDialogModule } from '@angular/material';
+import { MatDialogModule, MatIconModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { IconsModule } from './icons/icons.module';
 
 @NgModule({
   declarations: [
@@ -25,11 +27,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NoteDisplayComponent,
     SimplebarComponent,
     NoteListItemComponent,
-    QrDisplayComponent
+    QrDisplayComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, MediumEditorModule,
+    AppRoutingModule,
+    MediumEditorModule,
     ZXingScannerModule,
     ContenteditableModule,
     FormsModule,
@@ -37,10 +41,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     QRCodeModule,
     MatDialogModule,
+    IconsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent],
   entryComponents: [QrDisplayComponent]
 })
-export class AppModule { }
+export class AppModule {}

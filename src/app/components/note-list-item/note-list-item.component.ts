@@ -26,7 +26,7 @@ export class NoteListItemComponent implements OnInit {
     this.formattedNotes = []
     const removeTags = (item) => item.replace(/<(.|\n)*?>/g, '');
 
-    notes.map(note => {
+    notes && notes.map(note => {
       const noteLines = note.text.split("<div>");
       const [firstLine, remainingLines] = noteLines;
       const individualNote: FormattedNote = {

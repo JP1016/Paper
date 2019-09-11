@@ -1,5 +1,5 @@
 .editor {
-  letter-spacing: .00625em;
+  letter-spacing: 0.00625em;
   font-size: 1.3rem;
   font-weight: 400;
   line-height: 2rem;
@@ -10,4 +10,26 @@
 
 .qr {
   height: 720px;
+}
+
+.options {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: flex-end;
+}
+.options button {
+  background: var(--button);
+  padding: 5px 10px;
+  border-radius: 4px;
+  align-items: center;
+  display: flex;
+  margin-left: 5px;
+}
+
+.options button:hover {
+  background: var(--btn-hover);
+}
+
+.options button .fe-icon:hover {
+  color: var(--color);
 }
