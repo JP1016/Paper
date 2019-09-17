@@ -7,9 +7,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NoteDisplayComponent } from './components/note-display/note-display.component';
-import { SimplebarComponent } from '../../node_modules/jp-simplebar';
 import { NoteListItemComponent } from './components/note-list-item/note-list-item.component';
-import { MediumEditorModule } from 'angular2-medium-editor';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { ContenteditableModule } from '@ng-stack/contenteditable';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -25,7 +23,6 @@ import { IconsModule } from './icons/icons.module';
     AppComponent,
     SidebarComponent,
     NoteDisplayComponent,
-    SimplebarComponent,
     NoteListItemComponent,
     QrDisplayComponent,
     NavbarComponent
@@ -33,7 +30,6 @@ import { IconsModule } from './icons/icons.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MediumEditorModule,
     ZXingScannerModule,
     ContenteditableModule,
     FormsModule,
@@ -48,4 +44,4 @@ import { IconsModule } from './icons/icons.module';
   bootstrap: [AppComponent],
   entryComponents: [QrDisplayComponent]
 })
-export class AppModule {}
+export class AppModule { }

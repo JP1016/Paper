@@ -41,7 +41,3 @@ body {
 .main {
   display: flex;
 }
-
-medium-editor div {
-  height: 100vh;
-}

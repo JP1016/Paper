@@ -24,10 +24,7 @@
               "src/assets",
               "src/manifest.webmanifest"
             ],
-            "styles": [
-              "src/styles.css", "./node_modules/medium-editor/dist/css/medium-editor.css",
-              "./node_modules/medium-editor/dist/css/themes/default.css"
-            ],
+            "styles": [],
             "scripts": []
           },
           "configurations": {
@@ -84,10 +81,7 @@
               "src/assets",
               "src/manifest.webmanifest"
             ],
-            "styles": [
-              "src/styles.css", "./node_modules/medium-editor/dist/css/medium-editor.css",
-              "./node_modules/medium-editor/dist/css/themes/default.css"
-            ],
+            "styles": [],
             "scripts": []
           }
         },

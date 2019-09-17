@@ -26,16 +26,22 @@ export class NoteListItemComponent implements OnInit {
     this.formattedNotes = []
     const removeTags = (item) => item.replace(/<(.|\n)*?>/g, '');
 
-    notes && notes.map(note => {
-      const noteLines = note.text.split("<div>");
-      const [firstLine, remainingLines] = noteLines;
-      const individualNote: FormattedNote = {
-        firstLine: firstLine ? removeTags(firstLine) : null,
-        nextLines: remainingLines ? removeTags(remainingLines) : null,
-        id: note.id
-      }
-      this.formattedNotes.push(individualNote);
-    })
+    if (notes) {
+      notes.map(note => {
+        if (note && note.hasOwnProperty("text")) {
+          const noteLines = note.text.split("<div>");
+          const [firstLine, remainingLines] = noteLines;
+
+          const individualNote: FormattedNote = {
+            firstLine: firstLine ? removeTags(firstLine) : null,
+            nextLines: remainingLines ? removeTags(remainingLines) : null,
+            id: note.id
+          }
+          this.formattedNotes.push(individualNote);
+        }
+      });
+    }
+
   }
 
   changeNote(id: string) {

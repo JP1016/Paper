@@ -37,17 +37,18 @@ export class NoteDisplayComponent implements OnInit {
 
 
   deleteNote() {
-
+    this.notePad.nativeElement.innerHTML = "";
+    this.noteService.deleteNote(this.noteId);
+    this.noteId = this.noteService.uuidv4()
   }
 
   ngOnInit() {
     this.noteId = this.noteService.uuidv4();
 
     this.noteCtrl.valueChanges.pipe(
-      debounceTime(2400),
+      debounceTime(1000),
       distinctUntilChanged(),
       switchMap((value) => {
-
         let note: Note = {
           id: this.noteId,
           text: this.notePad.nativeElement.innerHTML,
@@ -59,7 +60,10 @@ export class NoteDisplayComponent implements OnInit {
       })).subscribe();
     this.noteService.currentNote.subscribe((note) => {
       if (this.notePad) {
-        this.notePad.nativeElement.innerHTML = note.text;
+        if (note && note.id !== this.noteId) {
+          this.noteId = note.id;
+          this.notePad.nativeElement.innerHTML = note.text;
+        }
       }
     })
   }

@@ -14,7 +14,7 @@ export class NoteService {
 
   uuidv4() {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-      var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+      const r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
       return v.toString(16);
     });
   }
@@ -24,33 +24,34 @@ export class NoteService {
   }
 
   deleteNote(id: string) {
-    let notes: Note[] = (this.getNotes()) as Note[] || []
-
-    if (notes && notes.length != 0) {
+    const notes: Note[] = (this.getNotes()) as Note[] || []
+    let indexToSplice;
+    if (notes && notes.length !== 0) {
       for (let i = 0; i < notes.length; i++) {
         if (notes[i].id === id) {
-          delete notes[i]
+          indexToSplice = i;
         }
       }
     }
+    notes.splice(indexToSplice, 1);
 
     localStorage.setItem("notes", JSON.stringify(notes));
+    this.getNotes();
   }
 
   getNotes() {
-    let noteJSON = localStorage.getItem("notes");
-    let noteListFromJSON = JSON.parse(noteJSON);
-    this.notesList.next(noteListFromJSON)
+    const noteJSON = localStorage.getItem("notes");
+    const noteListFromJSON = JSON.parse(noteJSON);
+    this.notesList.next(noteListFromJSON);
     return noteListFromJSON;
   }
 
   setNote(note: Note) {
     if (note) {
-      console.log(note)
       let freshNote: boolean = true;
-      let notes: Note[] = (this.getNotes()) as Note[] || []
+      const notes: Note[] = (this.getNotes()) as Note[] || []
 
-      if (notes && notes.length != 0) {
+      if (notes && notes.length !== 0) {
         for (let i = 0; i < notes.length; i++) {
           if (notes[i].id === note.id) {
             notes[i] = note;
@@ -64,20 +65,23 @@ export class NoteService {
       }
 
       localStorage.setItem("notes", JSON.stringify(notes));
+
+      this.getNotes(); //Refresh the note from localstorage and update sidebar
     }
   }
 
 
   changeNote(id: string) {
-    let notes: Note[] = (this.getNotes()) as Note[]
-
-    this.setNote(this.currentNote.getValue());
-
-    for (let i = 0; i < notes.length; i++) {
-      if (notes[i].id === id) {
-        this.currentNote.next(notes[i])
+    const notes: Note[] = (this.getNotes()) as Note[];
+    for (const note of notes) {
+      if (note.id === id) {
+        this.currentNote.next(note);
       }
     }
+  }
+
+  newNote() {
+    this.currentNote.next(null);
   }
 
 
