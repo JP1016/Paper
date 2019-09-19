@@ -49,7 +49,7 @@ export class NoteDisplayComponent implements OnInit {
       debounceTime(1000),
       distinctUntilChanged(),
       switchMap((value) => {
-        let note: Note = {
+        const note: Note = {
           id: this.noteId,
           text: this.notePad.nativeElement.innerHTML,
           timestamp: new Date().toString()

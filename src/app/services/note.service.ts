@@ -81,7 +81,12 @@ export class NoteService {
   }
 
   newNote() {
-    this.currentNote.next(null);
+    const note: Note = {
+      id: this.uuidv4(),
+      text: "",
+      timestamp: new Date().toString()
+    };
+    this.currentNote.next(note);
   }
 
 
