@@ -17,16 +17,20 @@ import { QrDisplayComponent } from '../qr-display/qr-display.component';
 export class NoteDisplayComponent implements OnInit {
 
   textVar = "";
+  showPlaceholder = true;
   placeholderVar = "Enter your notes here....";
-  note = "";
   noteCtrl = new FormControl();
   noteId: string;
   @ViewChild('notePad', { static: false }) notePad: ElementRef;
-
+  note: Note;
   constructor(private noteService: NoteService, private dialog: MatDialog, ) {
 
   }
 
+  hidePlaceholder() {
+    this.showPlaceholder = false;
+    this.setFocus();
+  }
   openAsQR() {
     this.dialog.open(QrDisplayComponent, {
       data: {
@@ -49,13 +53,14 @@ export class NoteDisplayComponent implements OnInit {
       debounceTime(1000),
       distinctUntilChanged(),
       switchMap((value) => {
-        const note: Note = {
+        this.showPlaceholder = false;
+        this.note = {
           id: this.noteId,
           text: this.notePad.nativeElement.innerHTML,
           timestamp: new Date().toString()
         };
-        this.noteService.currentNote.next(note);
-        this.noteService.saveNote(note);
+        this.noteService.currentNote.next(this.note);
+        this.noteService.saveNote(this.note);
         return of(null);
       })).subscribe();
     this.noteService.currentNote.subscribe((note) => {

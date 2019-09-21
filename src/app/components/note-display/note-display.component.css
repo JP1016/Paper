@@ -21,6 +21,7 @@
   position: absolute;
   right: 0;
 }
+
 .options button {
   background: var(--button);
   padding: 10px 15px;
@@ -36,4 +37,9 @@
 
 .options button .fe-icon:hover {
   color: var(--color);
+}
+
+.placeholder {
+  font-size: larger;
+  padding: 40px;
 }

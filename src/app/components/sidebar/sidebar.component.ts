@@ -15,7 +15,10 @@ export class SidebarComponent implements OnInit {
   }
 
   newNote() {
-    this.noteService.newNote();
+    if (this.noteService.isMobile) {
+      this.noteService.isSideBarVisible.next(false);
+      this.noteService.newNote();
+    }
   }
 
 }
