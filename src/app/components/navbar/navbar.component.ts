@@ -2,6 +2,7 @@ import { Component, OnInit, Inject, Renderer2 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { QrReadComponent } from '../qr-read/qr-read.component';
 import { MatDialog } from '@angular/material';
+import { NoteService } from 'src/app/services/note.service';
 
 @Component({
   selector: 'app-navbar',
@@ -18,7 +19,8 @@ export class NavbarComponent implements OnInit {
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
-    private renderer: Renderer2, private dialog: MatDialog) {
+    private renderer: Renderer2, private dialog: MatDialog,
+    private noteService: NoteService) {
   }
 
 
@@ -31,6 +33,10 @@ export class NavbarComponent implements OnInit {
   }
 
 
+  toggleSidebar() {
+    const isSideBarVisible = this.noteService.isSideBarVisible.getValue();
+    this.noteService.isSideBarVisible.next(!isSideBarVisible);
+  }
 
   toggleMode() {
     let mode;

@@ -9,6 +9,7 @@ export class NoteService {
 
   public currentNote: BehaviorSubject<Note> = new BehaviorSubject<Note>(null);
   public notesList: BehaviorSubject<Note[]> = new BehaviorSubject<Note[]>(null);
+  public isSideBarVisible: BehaviorSubject<Boolean> = new BehaviorSubject<Boolean>(false);
 
   constructor() { }
 

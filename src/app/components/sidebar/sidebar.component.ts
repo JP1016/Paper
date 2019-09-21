@@ -11,10 +11,11 @@ export class SidebarComponent implements OnInit {
   constructor(private noteService: NoteService) { }
 
   ngOnInit() {
+
   }
 
   newNote() {
-    this.noteService.newNote()
+    this.noteService.newNote();
   }
 
 }
