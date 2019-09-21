@@ -23,9 +23,9 @@ body {
   width: 250px;
   box-shadow: 0 0px 0px 0 rgba(0, 0, 0, -6.86), 0 0px 3px 0 rgba(0, 0, 0, -7.88), 0 5px 4px 1px var(--sidebar-shadow);
   overflow: auto;
-  height: 100vh;
+  height: 94vh;
+  padding-top: -10px;
   color: var(--text-color);
-  padding-bottom: 10vh;
   background: var(--sidebar);
   display: flex;
   flex-direction: column;
@@ -43,6 +43,7 @@ body {
 .content {
   flex-grow: 1;
   overflow: auto;
+  width: 50%;
 }
 
 .main {

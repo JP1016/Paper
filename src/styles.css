@@ -6,7 +6,7 @@ body[class='dark-mode'] {
   --text: #fff;
   --text-color: #718096;
   --shadow: rgba(27, 31, 46, 0.4);
-
+  --selected: #12151f;
   --sidebar-shadow: rgba(39, 37, 39, 0.4);
   --border: #3333337a;
   --button: #1a202c;
@@ -23,12 +23,13 @@ body[class='light-mode'] {
   --bg: #fff;
   --text: #212121;
   --shadow: rgba(0, 0, 0, 0.04);
-  --sidebar-shadow: rgba(0, 0, 0, 0.4);
+  --sidebar-shadow: rgba(26, 6, 6, 0.2);
   --border: #3333330f;
   --button: #edf2f7;
   --btn-hover: #e2e8f0;
   --sidebar: #edf2f7;
   --list-color: #474747;
+  --selected: #e2e8f0;
 
   --note-hover: #f7fafc;
   --note-main-text: #4a5568;
@@ -38,6 +39,10 @@ body[class='light-mode'] {
 
 * {
   font-family: 'Quicksand', sans-serif;
+}
+
+::selection {
+  background: #79ffe1;
 }
 
 html,
