@@ -13,6 +13,12 @@ export class NoteService {
 
   constructor() { }
 
+  isMobile() {
+    var isMobile = (/iphone|ipod|android|ie|blackberry|fennec/).test
+      (navigator.userAgent.toLowerCase());
+    return isMobile;
+  }
+
   uuidv4() {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
       const r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);

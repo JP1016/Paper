@@ -24,6 +24,7 @@
     "@angular/pwa": "^0.803.1",
     "@angular/router": "~8.0.0",
     "@angular/service-worker": "~8.0.0",
+    "@ctrl/ngx-github-buttons": "^3.2.2",
     "@ng-stack/contenteditable": "^1.0.1",
     "@zeit/ng-deploy": "^0.3.0",
     "@zxing/ngx-scanner": "^2.0.1",

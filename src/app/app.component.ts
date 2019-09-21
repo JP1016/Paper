@@ -11,7 +11,7 @@ export class AppComponent {
   title = 'notes';
   inputElement: ElementRef;
   noteText = "";
-  public isSidebarVisible: Boolean = false;
+  public isSidebarVisible: Boolean = true;
 
   constructor(private element: ElementRef, private renderer: Renderer2, private swUpdate: SwUpdate, private noteService: NoteService) { }
 
@@ -25,11 +25,7 @@ export class AppComponent {
     });
 
   }
-  isMobile() {
-    var isMobile = (/iphone|ipod|android|ie|blackberry|fennec/).test
-      (navigator.userAgent.toLowerCase());
-    return isMobile;
-  }
+
 
   ngOnInit(): void {
     if (this.swUpdate.isEnabled) {
@@ -38,9 +34,11 @@ export class AppComponent {
       });
     }
     this.noteService.isSideBarVisible.subscribe((val) => {
-      this.isSidebarVisible = val;
+      if (this.noteService.isMobile()) {
+        this.isSidebarVisible = val;
+      }
     })
-    if (!this.isMobile()) {
+    if (!this.noteService.isMobile()) {
       this.noteService.isSideBarVisible.next(true);
     } else {
       this.noteService.isSideBarVisible.next(false);

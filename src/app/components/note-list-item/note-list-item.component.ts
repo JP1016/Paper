@@ -17,8 +17,8 @@ export class NoteListItemComponent implements OnInit {
   ngOnInit() {
     this.noteService.getNotes();
     this.noteService.currentNote.subscribe(note => {
-      if(note){
-      this.currentNoteId = note.id;
+      if (note) {
+        this.currentNoteId = note.id;
       }
     })
     this.noteService.notesList.subscribe(noteList => {
@@ -51,7 +51,9 @@ export class NoteListItemComponent implements OnInit {
   }
 
   changeNote(id: string) {
-    console.log(id)
+    if (this.noteService.isMobile()) {
+      this.noteService.isSideBarVisible.next(false);
+    }
     this.noteService.changeNote(id);
 
   }

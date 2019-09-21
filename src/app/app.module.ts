@@ -19,6 +19,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { IconsModule } from './icons/icons.module';
 import { QrReadComponent } from './components/qr-read/qr-read.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { NtkmeButtonModule } from '@ctrl/ngx-github-buttons';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatDialogModule,
     IconsModule,
     MatSnackBarModule,
+    NtkmeButtonModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production, registrationStrategy: 'registerImmediately' })
   ],
   providers: [],
