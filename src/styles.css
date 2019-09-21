@@ -106,3 +106,7 @@ h2 {
     align-items: center;
   }
 }
+
+.pointer {
+  cursor: pointer;
+}

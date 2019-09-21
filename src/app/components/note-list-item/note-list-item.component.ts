@@ -11,10 +11,16 @@ import { FormattedNote } from 'src/app/models/formatted-note.model';
 export class NoteListItemComponent implements OnInit {
 
   formattedNotes: FormattedNote[] = [];
+  currentNoteId: string;
   constructor(private noteService: NoteService) { }
 
   ngOnInit() {
     this.noteService.getNotes();
+    this.noteService.currentNote.subscribe(note => {
+      if(note){
+      this.currentNoteId = note.id;
+      }
+    })
     this.noteService.notesList.subscribe(noteList => {
       console.log("Notes List")
       console.log(noteList)
@@ -24,7 +30,7 @@ export class NoteListItemComponent implements OnInit {
 
   splitOnLineBreak(notes: Note[]) {
     this.formattedNotes = []
-    const removeTags = (item) => item.replace(/<(.|\n)*?>/g, '');
+    const removeTags = (item) => item.replace(/<(.|\n)*?>/g, '').replace(/&nbsp;/gi, '');
 
     if (notes) {
       notes.map(note => {

@@ -1,25 +1,21 @@
-<nav
-  _ngcontent-xrp-c1=""
-  class="navbar navbar-expand-lg navbar-light"
-  style="webkit-box-shadow: 0 4px 12px 0 rgba(0,0,0,.05)!important;"
->
+<nav _ngcontent-xrp-c1="" class="navbar navbar-expand-lg navbar-light"
+  style="webkit-box-shadow: 0 4px 12px 0 rgba(0,0,0,.05)!important;">
   <div class="header">
     <div class="toggle-icon">
       <i-feather class="fe-icon" name="menu"></i-feather>
     </div>
 
     <div class="logo">
-      <img _ngcontent-xrp-c1="" src="https://image.flaticon.com/icons/svg/149/149065.svg" /><a
-        _ngcontent-xrp-c1=""
-        class="navbar-brand"
-        href="#"
-        >Paper</a
-      >
+      <img _ngcontent-xrp-c1="" src="https://image.flaticon.com/icons/svg/149/149065.svg" /><a _ngcontent-xrp-c1=""
+        class="navbar-brand" href="#">Paper</a>
     </div>
     <div class="menu">
-      <a href=""> <i-feather class="fe-icon" name="camera"></i-feather> </a>
       <a href="">
-        <i-feather class="fe-icon" name="moon"></i-feather>
+        <i-feather class="fe-icon" name="camera"></i-feather>
+      </a>
+      <a (click)="toggleMode()" class="pointer">
+        <i-feather class="fe-icon" name="moon" *ngIf="!isDarkMode"></i-feather>
+        <i-feather class="fe-icon" name="sun" *ngIf="isDarkMode"></i-feather>
         <!-- <i-feather class="fe-icon" name="sun"></i-feather> -->
       </a>
     </div>
