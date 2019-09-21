@@ -25,11 +25,17 @@ export class NavbarComponent implements OnInit {
 
 
   readQR() {
-    this.dialog.open(QrReadComponent, {
+    const dialogRef = this.dialog.open(QrReadComponent, {
       data: {
         text: null
       }, panelClass: "qr"
     });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result.success) {
+        this.noteService.newNote(result.data);
+      }
+    })
   }
 
 

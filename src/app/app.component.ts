@@ -26,9 +26,6 @@ export class AppComponent {
 
   }
   isMobile() {
-    // if we want a more complete list use this: http://detectmobilebrowsers.com/
-    // str.test() is more efficent than str.match()
-    // remember str.test is case sensitive
     var isMobile = (/iphone|ipod|android|ie|blackberry|fennec/).test
       (navigator.userAgent.toLowerCase());
     return isMobile;
@@ -37,9 +34,7 @@ export class AppComponent {
   ngOnInit(): void {
     if (this.swUpdate.isEnabled) {
       this.swUpdate.available.subscribe(() => {
-        if (confirm("New version available. Load New Version?")) {
-          window.location.reload();
-        }
+        window.location.reload();
       });
     }
     this.noteService.isSideBarVisible.subscribe((val) => {
