@@ -1,13 +1,12 @@
 {
-  "name": "notes",
-  "short_name": "notes",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "name": "Paper",
+  "short_name": "Paper",
+  "theme_color": "#0f1119",
+  "background_color": "#0f1119",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
-  "icons": [
-    {
+  "icons": [{
       "src": "assets/icons/icon-72x72.png",
       "sizes": "72x72",
       "type": "image/png"

@@ -63,9 +63,23 @@ export class NoteDisplayComponent implements OnInit {
         if (note && note.id !== this.noteId) {
           this.noteId = note.id;
           this.notePad.nativeElement.innerHTML = note.text;
+          this.setFocus();
         }
       }
-    })
+    });
+
+    this.setFocus();
+
+  }
+
+  setFocus() {
+    var p = document.getElementById('contenteditablediv'),
+      s = window.getSelection(),
+      r = document.createRange();
+    r.setStart(p, 0);
+    r.setEnd(p, 0);
+    s.removeAllRanges();
+    s.addRange(r);
   }
 
 
