@@ -1,4 +1,5 @@
 import { Component, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import { SwUpdate } from '@angular/service-worker';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,7 @@ export class AppComponent {
   inputElement: ElementRef;
   noteText = "";
 
-  constructor(private element: ElementRef, private renderer: Renderer2) { }
+  constructor(private element: ElementRef, private renderer: Renderer2, private swUpdate: SwUpdate) { }
 
   ngAfterViewInit(): void {
 
@@ -22,4 +23,15 @@ export class AppComponent {
     });
 
   }
+
+  ngOnInit(): void {
+    if (this.swUpdate.isEnabled) {
+      this.swUpdate.available.subscribe(() => {
+        if (confirm("New version available. Load New Version?")) {
+          window.location.reload();
+        }
+      });
+    }
+  }
+
 }

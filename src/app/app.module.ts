@@ -40,7 +40,7 @@ import { QrReadComponent } from './components/qr-read/qr-read.component';
     QRCodeModule,
     MatDialogModule,
     IconsModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production, registrationStrategy: 'registerImmediately' })
   ],
   providers: [],
   bootstrap: [AppComponent],
