@@ -17,6 +17,7 @@ import { MatDialogModule, MatIconModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { IconsModule } from './icons/icons.module';
+import { QrReadComponent } from './components/qr-read/qr-read.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { IconsModule } from './icons/icons.module';
     NoteDisplayComponent,
     NoteListItemComponent,
     QrDisplayComponent,
-    NavbarComponent
+    NavbarComponent,
+    QrReadComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +44,6 @@ import { IconsModule } from './icons/icons.module';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [QrDisplayComponent]
+  entryComponents: [QrDisplayComponent, QrReadComponent]
 })
 export class AppModule { }

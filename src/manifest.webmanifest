@@ -5,7 +5,7 @@
   "background_color": "#0f1119",
   "display": "standalone",
   "scope": "/",
-  "start_url": "http://paperapp.now.sh",
+  "start_url": "https://paperapp.now.sh",
   "icons": [{
       "src": "assets/icons/icon-72x72.png",
       "sizes": "72x72",

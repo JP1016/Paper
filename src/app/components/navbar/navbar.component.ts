@@ -1,5 +1,7 @@
 import { Component, OnInit, Inject, Renderer2 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { QrReadComponent } from '../qr-read/qr-read.component';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-navbar',
@@ -16,7 +18,16 @@ export class NavbarComponent implements OnInit {
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
-    private renderer: Renderer2) {
+    private renderer: Renderer2, private dialog: MatDialog) {
+  }
+
+
+  readQR() {
+    this.dialog.open(QrReadComponent, {
+      data: {
+        text: null
+      }, panelClass: "qr"
+    });
   }
 
 
