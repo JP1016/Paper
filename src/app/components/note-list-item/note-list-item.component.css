@@ -4,7 +4,10 @@
   margin: 10px;
 }
 
-
 .item {
-  color: #474747;
+  color: var(--list-color);
+}
+
+.desc-data {
+  height: 18px;
 }

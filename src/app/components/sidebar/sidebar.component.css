@@ -1,0 +1,19 @@
+.new-button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 20px;
+  outline: 0;
+}
+.fe-icon {
+  color: var(--list-color);
+}
+
+.new-button:hover,
+.new-button:hover .fe-icon {
+  color: var(--text);
+}
+
+.new-button span {
+  padding-right: 12px;
+}
