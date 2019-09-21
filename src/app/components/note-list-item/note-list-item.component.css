@@ -10,6 +10,7 @@
 
 .desc-data {
   height: 18px;
+  overflow: hidden;
 }
 
 .current {
