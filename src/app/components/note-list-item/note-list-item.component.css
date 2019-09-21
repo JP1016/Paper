@@ -5,12 +5,19 @@
 }
 
 .item {
-  color: var(--list-color);
+  color: var(--list-color); 
+  white-space: nowrap;
+  overflow: hidden;
+  width: 200px;
+  text-overflow: ellipsis;
 }
 
 .desc-data {
   height: 18px;
   overflow: hidden;
+  white-space: nowrap;
+  width: 200px;
+  text-overflow: ellipsis;
 }
 
 .current {
