@@ -2,9 +2,9 @@
   (click)="changeNote(note.id)">
   <div class="p-3 flex flex-col justify-between leading-normal">
     <div class="mb-0">
-      <div class="text-sm">{{ note.firstLine || "Untitled Note" }}</div>
+      <div class="text-sm item">{{ note.firstLine || "Untitled Note" }}</div>
       <p class="text-xs">{{ note.nextLines }}</p>
     </div>
+    <hr />
   </div>
-  <hr />
 </div>
