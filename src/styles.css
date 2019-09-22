@@ -16,7 +16,7 @@ body[class='dark-mode'] {
   --ernote-hov: #1a202c;
   --note-main-text: #e2e8f0;
   --note-sub-text: #718096;
-  --modal-bg: #718096;
+  --modal-bg: #1a202c;
 }
 
 body[class='light-mode'] {
@@ -105,6 +105,11 @@ h2 {
   background: var(--modal-bg);
 }
 
+.mat-dialog-title {
+  display: flex !important;
+  justify-content: space-between;
+  color: var(--note-sub-text);
+}
 @media only screen and (max-width: 600px) {
   .toggle-icon {
     display: flex;

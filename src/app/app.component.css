@@ -55,4 +55,7 @@ body {
   .sidebar {
     width: 600%;
   }
+  .content {
+    width: 0%;
+  }
 }
