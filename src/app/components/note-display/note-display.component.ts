@@ -23,6 +23,8 @@ export class NoteDisplayComponent implements OnInit {
   noteId: string;
   @ViewChild('notePad', { static: false }) notePad: ElementRef;
   note: Note;
+  showQR = false;
+
   constructor(private noteService: NoteService, private dialog: MatDialog, ) {
 
   }
@@ -53,7 +55,16 @@ export class NoteDisplayComponent implements OnInit {
       debounceTime(1000),
       distinctUntilChanged(),
       switchMap((value) => {
-        this.showPlaceholder = false;
+
+        if (this.notePad.nativeElement.innerHTML.length != 0) {
+          this.showQR = true;
+          this.showPlaceholder = false;
+        }
+        else {
+          this.showQR = false;
+          this.showPlaceholder = true;
+        }
+
         this.note = {
           id: this.noteId,
           text: this.notePad.nativeElement.innerHTML,

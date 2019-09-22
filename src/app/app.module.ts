@@ -42,6 +42,7 @@ import { NtkmeButtonModule } from '@ctrl/ngx-github-buttons';
     QRCodeModule,
     MatDialogModule,
     IconsModule,
+    MatIconModule,
     MatSnackBarModule,
     NtkmeButtonModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production, registrationStrategy: 'registerImmediately' })

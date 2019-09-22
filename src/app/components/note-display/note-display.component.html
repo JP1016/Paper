@@ -1,6 +1,6 @@
 <div class="d-flex">
   <div class="options">
-    <button (click)="openAsQR()">
+    <button (click)="openAsQR()" *ngIf="showQR">
       <i-feather name="send" class="fe-icon"></i-feather>
     </button>
     <button (click)="deleteNote()">
@@ -8,7 +8,7 @@
     </button>
   </div>
   <div *ngIf="showPlaceholder" (click)="hidePlaceholder()" class="placeholder">
-    Click here and start typing....⌨️
+    Untitled Document
   </div>
   <div id="contenteditablediv" class=" flex-grow-1" contenteditable="true" class="editor" [formControl]="noteCtrl"
     #notePad></div>
