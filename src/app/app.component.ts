@@ -20,7 +20,6 @@ export class AppComponent {
     this.renderer.listen(this.element.nativeElement, 'paste', (event) => {
       navigator['clipboard'].readText().then(clipText => {
         this.noteText = clipText
-        console.log(clipText)
       });
     });
 

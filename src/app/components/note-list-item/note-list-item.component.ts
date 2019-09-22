@@ -22,8 +22,6 @@ export class NoteListItemComponent implements OnInit {
       }
     })
     this.noteService.notesList.subscribe(noteList => {
-      console.log("Notes List")
-      console.log(noteList)
       this.splitOnLineBreak(noteList);
     })
   }
