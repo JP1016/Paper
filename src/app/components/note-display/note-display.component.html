@@ -10,6 +10,13 @@
   <div *ngIf="showPlaceholder" (click)="hidePlaceholder()" class="placeholder">
     Untitled Document
   </div>
-  <div id="contenteditablediv" class=" flex-grow-1" contenteditable="true" class="editor" [formControl]="noteCtrl"
-    #notePad></div>
+
+  <div
+    id="contenteditablediv"
+    class=" flex-grow-1"
+    contenteditable="true"
+    class="editor"
+    [formControl]="noteCtrl"
+    #notePad
+  ></div>
 </div>

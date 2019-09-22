@@ -110,6 +110,15 @@ h2 {
   justify-content: space-between;
   color: var(--note-sub-text);
 }
+
+.ph-badge {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 40px;
+  right: 0;
+  margin-right: 17px;
+}
+
 @media only screen and (max-width: 600px) {
   .toggle-icon {
     display: flex;
