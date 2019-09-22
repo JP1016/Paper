@@ -15,19 +15,16 @@ import { QrDisplayComponent } from '../qr-display/qr-display.component';
   styleUrls: ['./note-display.component.css']
 })
 export class NoteDisplayComponent implements OnInit {
-
-  textVar = "";
+  textVar = '';
   showPlaceholder = true;
-  placeholderVar = "Enter your notes here....";
+  placeholderVar = 'Enter your notes here....';
   noteCtrl = new FormControl();
   noteId: string;
   @ViewChild('notePad', { static: false }) notePad: ElementRef;
   note: Note;
   showQR = false;
 
-  constructor(private noteService: NoteService, private dialog: MatDialog, ) {
-
-  }
+  constructor(private noteService: NoteService, private dialog: MatDialog) {}
 
   hidePlaceholder() {
     this.showPlaceholder = false;
@@ -37,55 +34,55 @@ export class NoteDisplayComponent implements OnInit {
     this.dialog.open(QrDisplayComponent, {
       data: {
         text: this.notePad.nativeElement.innerHTML
-      }, panelClass: "qr"
+      },
+      panelClass: 'qr'
     });
   }
 
-
   deleteNote() {
-    this.notePad.nativeElement.innerHTML = "";
+    this.notePad.nativeElement.innerHTML = '';
     this.noteService.deleteNote(this.noteId);
-    this.noteId = this.noteService.uuidv4()
+    this.noteId = this.noteService.uuidv4();
   }
 
   ngOnInit() {
     this.noteId = this.noteService.uuidv4();
 
-    this.noteCtrl.valueChanges.pipe(
-      debounceTime(1000),
-      distinctUntilChanged(),
-      switchMap((value) => {
+    this.noteCtrl.valueChanges
+      .pipe(
+        debounceTime(1000),
+        distinctUntilChanged(),
+        switchMap(value => {
+          if (this.notePad.nativeElement.innerHTML.length != 0) {
+            this.showQR = true;
+            this.showPlaceholder = false;
+          } else {
+            this.showQR = false;
+            this.showPlaceholder = true;
+          }
 
-        if (this.notePad.nativeElement.innerHTML.length != 0) {
-          this.showQR = true;
-          this.showPlaceholder = false;
-        }
-        else {
-          this.showQR = false;
-          this.showPlaceholder = true;
-        }
-
-        this.note = {
-          id: this.noteId,
-          text: this.notePad.nativeElement.innerHTML,
-          timestamp: new Date().toString()
-        };
-        this.noteService.currentNote.next(this.note);
-        this.noteService.saveNote(this.note);
-        return of(null);
-      })).subscribe();
-    this.noteService.currentNote.subscribe((note) => {
+          this.note = {
+            id: this.noteId,
+            text: this.notePad.nativeElement.innerHTML,
+            timestamp: new Date().toString()
+          };
+          this.noteService.currentNote.next(this.note);
+          this.noteService.saveNote(this.note);
+          return of(null);
+        })
+      )
+      .subscribe();
+    this.noteService.currentNote.subscribe(note => {
       if (this.notePad) {
         if (note && note.id !== this.noteId) {
           this.noteId = note.id;
           this.notePad.nativeElement.innerHTML = note.text;
-          this.setFocus();
+          this.hidePlaceholder();
         }
       }
     });
 
     this.setFocus();
-
   }
 
   setFocus() {
@@ -97,7 +94,4 @@ export class NoteDisplayComponent implements OnInit {
     s.removeAllRanges();
     s.addRange(r);
   }
-
-
-
 }
