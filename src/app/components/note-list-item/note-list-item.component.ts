@@ -33,7 +33,7 @@ export class NoteListItemComponent implements OnInit {
     if (notes) {
       notes.map(note => {
         if (note && note.hasOwnProperty("text")) {
-          const noteLines = note.text.split("<div>");
+          const noteLines = note.text.split("<div");
           const [firstLine, remainingLines] = noteLines;
 
           const individualNote: FormattedNote = {
