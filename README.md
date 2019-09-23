@@ -7,7 +7,7 @@
 ✅ Live Preview: <a href="https://paperapp.now.sh/" target="_BLANK">https://paperapp.now.sh</a>
 
   <p align="center">
-   Made with ❤️ by <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/jp1016v1?style=social"> 
+   Made with ❤️ by <a href="https://twitter.com/JP1016v1"><img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/jp1016v1?style=social"> </a>
   </p>
 
 
