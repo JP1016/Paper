@@ -1,6 +1,6 @@
 # Paper
 
-🚀A "no-cloud" note taking app with "no-internet" sharing.
+🚀A "no-cloud" note taking app with "no-network" sharing.
 
 [![Paper](https://github.com/JP1016/Paper/blob/master/preview.png?raw=true 'Paper')]()
 
